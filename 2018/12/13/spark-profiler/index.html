@@ -606,20 +606,25 @@
 
 
 
-	<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
-	<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
-	<script type="text/javascript">
-		var gitalk = new Gitalk({      
-			clientID:  '6b693c7728b0b4147d3d',
-			clientSecret: 'f4487adede855de5184aa4e63c0624739b3dd1e7',
-			repo: 'zjuskm.github.io',
-			owner: 'zjuskm',
-			admin: 'zjuskm',
-			id: location.pathname,
-			distractionFreeMode: 'true',
-		  })
-		  gitalk.render('gitalk-container')
-	</script>
+    
+        
+        <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+        <script src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.js"></script>
+        <script type="text/javascript">
+            const gitalk = new Gitalk({
+            clientID: '6b693c7728b0b4147d3d',
+            clientSecret: 'f4487adede855de5184aa4e63c0624739b3dd1e7',
+            repo: 'zjuskm.github.io',
+            owner: 'zjuskm',
+            admin: 'zjuskm'.split(','),
+            pagerDirection: '',
+            id: md5(window.location.pathname),
+            distractionFreeMode: false
+            })
+            gitalk.render('gitalk-container')
+        </script>
+        
+    
 
 
 
